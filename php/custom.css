@@ -1,0 +1,29 @@
+.card{
+	margin-bottom: 20px;
+}
+
+.btn-outline-success {
+	
+	color:  #04BFBF;
+	border-color: #04BFBF;
+}
+
+.underline{
+	margin-bottom: 20px;
+	z-index:-100;
+	margin-top: -10px;
+}
+h1{
+	
+	color: #023059;
+	font-family: 'Pacifico', cursive;
+}
+ .navbar-brand{
+	 
+	 //font-family: 'Pacifico', cursive;
+         @import url("https://use.typekit.net/yfl8wmx.css");
+ }
+ 
+ a{
+     font-family: 
+ }
