@@ -1,10 +1,14 @@
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 <h1 class="text-center">myAccount</h1>
-<?php # DISPLAY COMPLETE REGISTRATION PAGE.
-$page_title = 'User Area ' ;
-include('logout.html');
+<?php 
 # Access session.
 session_start() ;
+
+echo  $_SESSION[ 'user_id' ];
+# DISPLAY COMPLETE REGISTRATION PAGE.
+$page_title = 'User Area ' ;
+include('logout.html');
+
 
 # Redirect if not logged in.
 if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load() ; }
@@ -12,7 +16,7 @@ if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load()
 # Open database connection.
 require ( 'connect1.php' ) ;
 
-$q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
+$q = "SELECT * FROM users WHERE user_id={$_SESSION['user_id']}" ;
 	$r = mysqli_query( $link, $q ) ;
 	if ( mysqli_num_rows( $r ) > 0 )
         {
@@ -57,7 +61,7 @@ $q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
 ' ; }
 
 # Retrieve items from 'users' database table.
-	$q = "SELECT * FROM users WHERE user_id={$_SESSION[user_id]}" ;
+	$q = "SELECT * FROM users WHERE user_id={$_SESSION['user_id']}" ;
 	$r = mysqli_query( $link, $q ) ;
 	if ( mysqli_num_rows( $r ) > 0 )
 	{
