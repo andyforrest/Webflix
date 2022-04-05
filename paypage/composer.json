@@ -1,0 +1,7 @@
+{
+    "require": {
+        "stripe/stripe-php": "^7.121",
+        "league/omnipay": "^3.2",
+        "omnipay/stripe": "^3.2"
+    }
+}
