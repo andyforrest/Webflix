@@ -51,7 +51,7 @@ include ( 'logout.html' ) ;
 				  <img src='. $row['img'].' alt="Movie" class="img-thumbnail bg-secondary">
 				  <h5 class="card-title">'. $row['movie_title'].' </h5>
 				  <a href="movie.php?id='.$row['id'].'" class="btn btn-secondary btn-block" role="button">
-				 Book Now</a>
+				 Watch Now</a>
 			   </div>
 		  </div>
 		</div>';
@@ -74,4 +74,4 @@ include ( 'footer.html' ) ;
 
    <!--<img src='. $row['img'].' alt="Movie" class="img-thumbnail bg-secondary">
 <h5> '. $row['movie_title'].' </h5>
-	<a href="movie.php?id='.$row['id'].'" class="btn btn-secondary btn-block" role="button">Book Now</a>  ';
+	<a href="movie.php?id='.$row['id'].'" class="btn btn-secondary btn-block" role="button">Watch Now</a>  ';

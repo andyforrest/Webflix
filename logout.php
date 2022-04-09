@@ -8,7 +8,7 @@ if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load()
 
 # Set page title and display header section.
 $page_title = 'Home' ;
-include ( 'logout.html' ) ;
+include ( 'login.html' ) ;
 
 
 # Clear existing variables.
