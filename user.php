@@ -4,7 +4,7 @@
 # Access session.
 session_start() ;
 
-echo  $_SESSION[ 'user_id' ];
+
 # DISPLAY COMPLETE REGISTRATION PAGE.
 $page_title = 'User Area ' ;
 include('logout.html');
