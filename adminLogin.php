@@ -9,6 +9,7 @@ and open the template in the editor.
 
 
 
+
 include('login.html');
 echo '
 
@@ -16,23 +17,23 @@ echo '
   <div class="row">
     <div class="col-sm">
 		<div class="card bg-light mb-3">
-		  <div class="card-header">Create Account</div>
+		  <div class="card-header">Register as Admin</div>
 		  <div class="card-body">
-			<h5 class="card-title">Create Account</h5>
-			<p class="card-text">Create an account!</p>
-			<a href="register.php" class="btn btn-secondary btn-lg btn-block">Create Account</a>
+			<h5 class="card-title">Register as Admin</h5>
+			<p class="card-text">Send a request to gain access to admin portal</p>
+			<a href="register.php" class="btn btn-secondary btn-lg btn-block">Register</a>
 		  </div>
 		</div>
 	</div>
 	<div class="col-sm">
 		<div class="card bg-light mb-3">
-		  <div class="card-header">Account</div>
+		  <div class="card-header">Admin</div>
 		  <div class="card-body">
-			<h5 class="card-title">Account</h5>
-			<p class="card-text">Already have an account?  Sign in now to use our app.</p>
+			<h5 class="card-title">Admin</h5>
+			<p class="card-text">Log in with your admin details to proceed</p>
 			<a href="login.php" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Sign In</a>
-			<br>
-            <a href="forgotPassword.php">Forgotten password?</a>
+            <br>
+            <a href="#">Forgotten password?</a>
 		  </div>
 		</div>
 	</div>
