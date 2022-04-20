@@ -100,7 +100,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
      if(mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful
-       header('Location: chooseSubscription.php'); 
+       header('Location: adminHome.php'); 
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
@@ -122,7 +122,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     mysqli_close( $link );
   }  
 }
-
+include('admin_login_action.php');
 include ( 'footer.html' ) ;
 ?>
 
