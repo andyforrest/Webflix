@@ -33,7 +33,7 @@ echo '
 			<p class="card-text">Log in with your admin details to proceed</p>
 			<a href="adminLogin.php" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Sign In</a>
             <br>
-            <a href="#">Forgotten password?</a>
+            <a href="admin_forgotPassword.php">Forgotten password?</a>
 		  </div>
 		</div>
 	</div>
