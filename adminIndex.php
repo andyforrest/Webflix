@@ -51,7 +51,7 @@ echo '
       </div>
       <div class="modal-body">
        
-		<form action="login_action.php" class="was-validated" method="post"method="post">
+		<form action="admin_login_action.php" class="was-validated" method="post"method="post">
 			<div class="form-group">
 				<input type="text" class="form-control" placeholder="Email" name="email" required>
 			</div>
@@ -70,6 +70,7 @@ echo '
 </div>
 
 ';
+
 include ( 'footer.html' ) ;
 
 ?>
