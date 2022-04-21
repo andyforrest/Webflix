@@ -23,6 +23,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
   {
     # Access session.
     session_start();
+    $_SESSION[ 'email' ] = $_POST[ 'email' ] ;
     $_SESSION[ 'user_id' ] = $data[ 'user_id' ] ;
     $_SESSION[ 'first_name' ] = $data[ 'first_name' ] ;
     $_SESSION[ 'last_name' ] = $data[ 'last_name' ] ;

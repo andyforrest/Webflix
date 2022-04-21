@@ -34,10 +34,18 @@ include ( 'logout.html' ) ;
 # Open database connection.
 	require ( 'connect1.php' ) ;
 
-        
+
+#verify subscription status of user
+
+
+
 # Retrieve movies from 'movie' database table.
-	$q = "SELECT * FROM movie" ;
-	$r = mysqli_query( $link, $q ) ;
+$q = "SELECT * FROM movie" ;
+$r = mysqli_query( $link, $q ) ;
+
+	
+
+	
 	if ( mysqli_num_rows( $r ) > 0 )
 	{
          # Display body section.
@@ -66,6 +74,9 @@ include ( 'logout.html' ) ;
         # Or display message.
 	else { echo '<p>There are currently no movies showing.</p>
 	' ; }
+	
+        
+
         
         
 # Display footer section.
