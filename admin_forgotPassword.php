@@ -33,7 +33,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     $_SESSION[ 'admin_id' ] = $data[ 'admin_id' ] ;
     $_SESSION[ 'first_name' ] = $data[ 'first_name' ] ;
     $_SESSION[ 'last_name' ] = $data[ 'last_name' ] ;
-    load ( 'adminHome.php' ) ;
+    load ( 'adminUser.php' ) ;
   }
   # Or on failure set errors.
   else { $errors = $data; } 
