@@ -45,6 +45,18 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
   { $e = mysqli_real_escape_string( $link, trim( $_POST[ 'email' ] ) ) ; }
 
 
+  if ( empty( $_POST[ 'birthdate' ] ) )
+  { $errors[] = 'Enter your birthdate' ; }
+  else
+  { $birthdate = mysqli_real_escape_string( $link, trim( $_POST[ 'birthdate' ] ) ) ; }
+
+
+  if ( empty( $_POST[ 'number' ] ) )
+  { $errors[] = 'Enter your phone number' ; }
+  else
+  { $num = mysqli_real_escape_string( $link, trim( $_POST[ 'number' ] ) ) ; }
+
+
   if ( empty( $_POST[ 'security_q' ] ) )
   { $errors[] = 'Enter your security question.' ; }
   else
@@ -96,7 +108,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 
  if(empty($errors)){
     
-     $sql = "INSERT INTO users (first_name, last_name, email, pass, security_q, security_a, reg_date) VALUES ('$fn', '$ln', '$e', SHA2('$p',256), SHA2('$sq',256), SHA2('$sa',256), NOW() )";
+     $sql = "INSERT INTO users (first_name, last_name, email, birthdate, number, pass, security_q, security_a, reg_date, status) VALUES ('$fn', '$ln', '$e', '$birthdate', '$num', SHA2('$p',256), SHA2('$sq',256), SHA2('$sa',256), NOW(), 'active')";
      if(mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful
@@ -141,11 +153,21 @@ include ( 'footer.html' ) ;
 					<input type="text" name="last_name" class="form-control" value="" required>
 				 </div>
 				 <br>
+         
 				 <div class="form-group">
 					<input type="email" name="email" class="form-control" placeholder="Email" value="" required>
-				 	<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
+				 	
 				 </div>
+
+         <div class="form-group">
+         <small id="emailHelp" class="form-text text-muted">Date of Birth</small>
+					<input type="date" name="birthdate" class="form-control" placeholder="Birthdate" value="" required>
+				 </div>
+
+         <div class="form-group">
+					<input type="number" name="number" class="form-control" placeholder="Phone Number" value="" required>
+				 </div>
+
 				 <div class="form-group">
 					<input type="password" name="pass1" class="form-control" placeholder="Create New Password" value="" required>
 				 </div>
