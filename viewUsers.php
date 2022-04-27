@@ -10,11 +10,11 @@
 session_start() ;
 
 # Redirect if not logged in.
-if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load() ; }
+if ( !isset( $_SESSION[ 'admin_id' ] ) ) { require ( 'admin_login_tools.php' ) ; load() ; }
 
 # Set page title and display header section.
 $page_title = 'Reviews' ;
-include ( 'logout.html' ) ;
+include ( 'admin.html' ) ;
 
 if ( isset( $_GET['movie_title'] ) ) $movie_title = $_GET['movie_title'] ;
 if ( isset( $_GET['id'] ) ) $id = $_GET['id'] ;
@@ -40,17 +40,22 @@ echo '<div class="container">';
   {
    echo '<div class="alert alert-dark" role="alert">
 	<h4 class="alert-heading">User: ' . $row['user_id'] . '  </h4>
-	<p>Name:  ' . $row['first_name'] . ' &#9734</p>
-	<p>email: ' . $row['email'] . '</p>
+	<p>First Name:  ' . $row['first_name'] . ' </p>
+    <p>Last Name:  ' . $row['last_name'] . ' </p>
+	<p>Email: ' . $row['email'] . '</p>
+    <p>Birthdate: ' . $row['birthdate'] . '</p>
+    <p>Phone Number: ' . $row['number'] . '</p>
+    <p>Status: ' . $row['status'] . '</p>
 	<hr>
 	<footer class="blockquote-footer">
-	<span>' . $row['first_name'] .' '. $row['last_name'] . '</span> 
+	<span>Registration Date: </span> 
 	<cite title="Source Title"> '. $row['reg_date'].'</cite>
 	</footer>
+    <a href="editUser.php?id='.$row['user_id'].'" class="btn btn-secondary btn-block" role="button">
+    Edit User</a>
 	</div>
 ';  
   }
-echo '<br><button type="button" class="btn btn-secondary" role="button" data-toggle="modal" data-target="#rev">Add Movie Review</button><br>' ;
   } 
 else { 
 echo '<div class="container">
