@@ -96,69 +96,9 @@ echo '
   
  
 
-# Display body section, retrieving from 'mov_rev' database table.
-//$q = "SELECT * FROM movie ";
-$q = "SELECT movie_title FROM movie WHERE id = '$id'";
-$r = mysqli_query( $link, $q ) ;
- while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
-  {
-  echo  
-  
-  '
-	   <option>' . $row['movie_title'] . '  </option>
-               
-	     ';
-        
 
-  }
 
-	echo '</select></div>
-        <br>
-            <label for="rate">Rate Movie: </label>
-        
-                <div class="form-check">
-                <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="rate" value="1">&#9734;
-                </label>
-                </div>
-               
-                
-                <div class="form-check">
-                <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="rate" value="2">&#9734; &#9734;
-                </label>
-                </div>
-                
-                <div class="form-check">
-                <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="rate" value="3">&#9734; &#9734; &#9734;
-                </label>
-                </div>
-                
-
-                <div class="form-check">
-                <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="rate" value="4">&#9734; &#9734; &#9734; &#9734;
-                </label>
-                </div>
-                
-                <div class="form-check">
-	 	<label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="rate" value="5">&#9734; &#9734; &#9734; &#9734; &#9734;
-		</label>
-                </div>
-                
- 
-             <div class="form-group">
-	<label for="comment">Comment:</label>
-<textarea class="form-control" rows="5" id="message" name="message" required></textarea>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<input class="btn btn-dark" type="submit" value="Post Review">
- </div>
-</div>
-</form></div>  ';
-
+	
 
         
 # Close database connection.

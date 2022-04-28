@@ -76,14 +76,14 @@ echo '
  
 
 # Display body section, retrieving from 'mov_rev' database table.
-$q = "SELECT * FROM movie";
+$q = "SELECT * FROM media";
 $r = mysqli_query( $link, $q ) ;
  while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
   {
   echo  
   
   '
-	   <option>' . $row['movie_title'] . '  </option>
+	   <option>' . $row['media_title'] . '  </option>
                
 	     ';
         

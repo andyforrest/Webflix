@@ -35,12 +35,12 @@ include ( 'logout.html' ) ;
 	require ( 'connect1.php' ) ;
 
 
-#verify subscription status of user
 
 
 
-# Retrieve movies from 'movie' database table.
-$q = "SELECT * FROM movie" ;
+
+# Retrieve movies from media
+$q = "SELECT * FROM media" ;
 $r = mysqli_query( $link, $q ) ;
 
 	
@@ -57,8 +57,8 @@ $r = mysqli_query( $link, $q ) ;
 		<div class="card text-center">	  
 				
 				  <img src='. $row['img'].' alt="Movie" class="img-thumbnail bg-secondary">
-				  <h5 class="card-title">'. $row['movie_title'].' </h5>
-				  <a href="movie.php?id='.$row['id'].'" class="btn btn-secondary btn-block" role="button">
+				  <h5 class="card-title">'. $row['media_title'].' </h5>
+				  <a href="movie.php?id='.$row['media_id'].'" class="btn btn-secondary btn-block" role="button">
 				 Watch Now</a>
 			   </div>
 		  </div>

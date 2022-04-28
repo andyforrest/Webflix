@@ -28,7 +28,7 @@ if ( mysqli_num_rows( $request ) > 0 )
 
 
 # Retrieve selective item data from 'movie' database table. 
-$q = "SELECT * FROM movie WHERE id = '$id'" ;
+$q = "SELECT * FROM media WHERE media_id = '$id'" ;
 $r = mysqli_query( $link, $q ) ;
 if ( mysqli_num_rows( $r ) == 1 )
 {
@@ -42,7 +42,7 @@ if ( mysqli_num_rows( $r ) == 1 )
     
     
     '<div class="container">
-			<h1 class="display-4"> '.$row['movie_title'].'</h1>
+			<h1 class="display-4"> '.$row['media_title'].'</h1>
 		<div class="row">
 			<div class="col-sm-12 col-md-4">
 			  <div class="embed-responsive embed-responsive-16by9">
@@ -58,21 +58,20 @@ if ( mysqli_num_rows( $r ) == 1 )
 				<p>'. $row['further_info']. '</p>
 			</div>
 			<div class="col-sm-12 col-md-4">
-				<h4>Book Now</h4>
+				<h4>Watch Now</h4>
 				
 				<h2>
-				  <a href="show1.php"> <button type="button" class="btn btn-secondary" role="button"> 11.30 </button></a>
-				  <a href="show2.php"> <button type="button" class="btn btn-secondary" role="button"> 13.20 </button></a>
-				  <a href="show3.php"> <button type="button" class="btn btn-secondary" role="button"> 17.45 </button></a>
+				  <a href="show1.php"> <button type="button" class="btn btn-secondary" role="button"> Play </button></a>
+				 
 				</h2>
                                 <br>
-				 <h4>Movie Reviews</h4>
+				 <h4>Reviews</h4>
 				
 				  <p>
-				  <a href="mov-rev.php?id='.$row['id'].'">
+				  <a href="mov-rev.php?id='.$row['media_id'].'">
 				  <span class="btn btn-secondary">This Movie </span></a>
-				  <a href="review.php?id='.$row['id'].'">
-				  <span class="btn btn-secondary">All Movies</span> </a>
+				  <a href="review.php?id='.$row['media_id'].'">
+				  <span class="btn btn-secondary">All Media</span> </a>
 				</p> 
 			</div>';
   
