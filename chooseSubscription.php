@@ -1,3 +1,30 @@
+<?php
+session_start();
+$e = $_SESSION['email'];
+
+
+# Open database connection.
+require ( 'connect1.php' ) ;
+
+
+# Check if email address already registered.
+if ( empty( $errors ) )
+{
+  $q = "SELECT user_id FROM users WHERE email='$e'" ;
+  $r = @mysqli_query ( $link, $q ) ;
+  if ( mysqli_num_rows( $r ) != 0 ){
+
+    while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+	{
+     $_SESSION[ 'user_id' ] = $row['user_id'];
+    
+  }} ;
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
