@@ -61,7 +61,7 @@ if ( mysqli_num_rows( $r ) == 1 )
 				<h4>Watch Now</h4>
 				
 				<h2>
-				  <a href="show1.php"> <button type="button" class="btn btn-secondary" role="button"> Play </button></a>
+				  <a href='. $row['preview']. '> <button type="button" class="btn btn-secondary" role="button"> Play </button></a>
 				 
 				</h2>
                                 <br>
