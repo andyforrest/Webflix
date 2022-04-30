@@ -10,10 +10,9 @@
 
 # Access session.
 session_start() ;
-
 # Redirect if not logged in.
 if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load() ; }
-echo "{$_SESSION['user_id']}";
+
 
 # Set page title and display header section.
 $page_title = 'Reviews' ;
@@ -63,7 +62,7 @@ else { echo ' <div class="container">
 <?php # DISPLAY POST MESSAGE FORM.
 # Display form.
 echo '
-<form action="post_action.php" method="post" accept-charset="utf-8">
+<form onsubmit="document.getElementById("myForm").reset();" action="post_action.php" method="post" accept-charset="utf-8">
 	<div class="form-check">
 	
         
@@ -133,7 +132,12 @@ $r = mysqli_query( $link, $q ) ;
 <textarea class="form-control" rows="5" id="message" name="message" required></textarea>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<input class="btn btn-dark" type="submit" value="Post Review">
+<input class="btn btn-dark" type="submit" value="Post Review" onclick="myFunction()">
+<script>
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
+</script>
  </div>
 </div>
 </form></div>  ';
