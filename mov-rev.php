@@ -16,13 +16,13 @@ if ( !isset( $_SESSION[ 'user_id' ] ) ) { require ( 'login_tools.php' ) ; load()
 $page_title = 'Reviews' ;
 include ( 'logout.html' ) ;
 
-if ( isset( $_GET['movie_title'] ) ) $movie_title = $_GET['movie_title'] ;
+//if ( isset( $_GET['movie_title'] ) ) $movie_title = $_GET['movie_title'] ;
 if ( isset( $_GET['id'] ) ) $id = $_GET['id'] ;
 
 # Open database connection.
 require ( 'connect1.php' ) ;
 
-$sql = "SELECT * FROM mov_rev WHERE movie_title = (SELECT movie_title FROM movie WHERE id = '$id')";
+$sql = "SELECT * FROM mov_rev WHERE movie_title = (SELECT media_title FROM media WHERE media_id = '$id')";
 $r = mysqli_query( $link, $sql ) ;
 
 
@@ -93,14 +93,14 @@ echo '
 
 # Display body section, retrieving from 'mov_rev' database table.
 //$q = "SELECT * FROM movie ";
-$q = "SELECT movie_title FROM movie WHERE id = '$id'";
+$q = "SELECT media_title FROM media WHERE media_id = '$id'";
 $r = mysqli_query( $link, $q ) ;
  while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
   {
   echo  
   
   '
-	   <option>' . $row['movie_title'] . '  </option>
+	   <option>' . $row['media_title'] . '  </option>
                
 	     ';
         
