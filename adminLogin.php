@@ -1,41 +1,37 @@
-<?php
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- Hotjar Tracking Code for My site -->
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<style>
+    body{
+        padding: 15px;
+    }
+    
+</style>
+<?php # DISPLAY COMPLETE LOGIN PAGE.
 
-# Check form submitted.
-if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
+# Include HTML static file login.html
+include ( 'login.html' ) ;
+
+# Display any error messages if present.
+if ( isset( $errors ) && !empty( $errors ) )
 {
-  # Open database connection.
-  require ( 'connect1.php' ) ;
-
-  # Get connection, load, and validate functions.
-  require ( 'admin_login_tools.php' ) ;
-
-  # Check login.
-  list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'pass' ] ) ;
-
-  # On success set session data and display logged in page.
-  if ( $check )  
-  {
-    # Access session.
-    session_start();
-    $_SESSION[ 'admin_id' ] = $data[ 'admin_id' ] ;
-    $_SESSION[ 'first_name' ] = $data[ 'first_name' ] ;
-    $_SESSION[ 'last_name' ] = $data[ 'last_name' ] ;
-    load ( 'adminHome.php' ) ;
-  }
-  # Or on failure set errors.
-  else { $errors = $data; } 
-
-  # Close database connection.
-  mysqli_close( $link ) ; 
+ echo '<p id="err_msg">Oops! There was a problem:<br>' ;
+ foreach ( $errors as $msg ) { echo " - $msg<br>" ; }
+ echo 'Please try again or <a href="register.php">Register</a></p>' ;
 }
-
-# Continue to display login page on failure.
-//include ( 'adminLogin.php' ) ;
+//echo $_SERVER['HTTP_HOST'];
+//echo dirname( $_SERVER[ 'PHP_SELF' ] );
 
 ?>
+<h1>Login</h1>
+<form action="admin_login_action.php" method="post">
+<p>Email Address: <input type="text" name="email"> </p>
+<p>Password: <input type="password" name="pass"></p>
+<p><input type="submit" value="Login" ></p>
+</form>
+
+
+<?php
+include ( 'footer.html' ) ;
+?>
+<link rel="stylesheet" type="text/css" href="css/style.css">
