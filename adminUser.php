@@ -7,7 +7,7 @@ session_start() ;
 
 # DISPLAY COMPLETE REGISTRATION PAGE.
 $page_title = 'User Area ' ;
-include('logout.html');
+include('admin.html');
 
 
 # Redirect if not logged in.
