@@ -22,17 +22,11 @@ include ( 'admin.html' ) ;
 require ( 'connect1.php' ) ;
 
 
-$sql = "SELECT `category` FROM `media` GROUP BY `category`";
+$sql = "SELECT `category` FROM `media` WHERE `category` IS NOT NULL  GROUP BY `category`";
 $r = mysqli_query( $link, $sql ) ;
 
 
 
-
-# Retrieve items from 'mov_rev' database table.
-
-//$q = "SELECT * FROM mov_rev WHERE movie_title LIKE '%{$_GET['movie_title']}%'" ;
-
-$r = mysqli_query( $link, $sql ) ;
 if ( mysqli_num_rows( $r ) > 0 )
 {
 echo '<div class="container">';
@@ -55,5 +49,8 @@ echo '<div class="container">
 <br>	<button type="button" class="btn btn-secondary" role="button" data-toggle="modal" data-target="#rev">Add Movie Review</button><br>
 </div>
 <div>  ' ; }
+
+# Display footer section.
+include ( 'footer.html' ) ;
 
 ?>
