@@ -83,6 +83,12 @@ if ( mysqli_num_rows( $r ) == 1 )
         <small id="emailHelp" class="form-text text-muted">Phone Number</small>
                    <input type="number" name="number" class="form-control" placeholder="Phone Number" value=' . $row['number'] . '  required>
                 </div>
+                <div class="form-group">
+                <small id="emailHelp" class="form-text text-muted">Country</small>
+                <textarea class="form-control" rows="1" id="country" name="country"   required>' . $row['country'] . ' </textarea>
+                 
+                    
+                </div>
                 
                 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Status</label>

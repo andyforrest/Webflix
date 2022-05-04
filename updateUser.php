@@ -54,6 +54,10 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
   else
   { $num = mysqli_real_escape_string( $link, trim( $_POST[ 'number' ] ) ) ; }
 
+  if ( empty( $_POST[ 'country' ] ) )
+  { $errors[] = 'Country cannot be blank' ; }
+  else
+  { $country = mysqli_real_escape_string( $link, trim( $_POST[ 'country' ] ) ) ; }
 
   if ( empty( $_POST[ 'status' ] ) )
   { $errors[] = 'Status cannot be blank.' ; }
@@ -67,7 +71,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 
  if(empty($errors)){
     
-     $sql = "UPDATE users SET first_name = '$fn', last_name = '$ln', email = '$e', birthdate = '$birthdate', number = '$num', status = '$status' WHERE user_id = {$_SESSION['id']}";
+     $sql = "UPDATE users SET first_name = '$fn', last_name = '$ln', email = '$e', birthdate = '$birthdate', number = '$num', country = '$country', status = '$status' WHERE user_id = {$_SESSION['id']}";
      if($request = mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful

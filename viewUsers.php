@@ -45,6 +45,7 @@ echo '<div class="container">';
 	<p>Email: ' . $row['email'] . '</p>
     <p>Birthdate: ' . $row['birthdate'] . '</p>
     <p>Phone Number: ' . $row['number'] . '</p>
+    <p>Country: ' . $row['country'] . '</p>
     <p>Status: ' . $row['status'] . '</p>
 	<hr>
 	<footer class="blockquote-footer">
