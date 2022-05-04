@@ -36,6 +36,6 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 }
 
 # Continue to display login page on failure.
-include ( 'adminLogin.php' ) ;
+//include ( 'adminLogin.php' ) ;
 
 ?>

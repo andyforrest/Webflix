@@ -65,12 +65,12 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
   
   
 # Check for a password and matching input passwords.
-  if ( !empty($_POST[ 'pass1' ] ) )
+  if ( !empty($_POST[ 'pass' ] ) )
   {
-    if ( $_POST[ 'pass1' ] != $_POST[ 'pass2' ] )
+    if ( $_POST[ 'pass' ] != $_POST[ 'pass1' ] )
     { $errors[] = 'Passwords do not match.' ; }
     else
-    { $p = mysqli_real_escape_string( $link, trim( $_POST[ 'pass1' ] ) ) ; }
+    { $p = mysqli_real_escape_string( $link, trim( $_POST[ 'pass' ] ) ) ; }
   }
   else { $errors[] = 'Enter your password.' ; }
   
@@ -147,10 +147,10 @@ include ( 'footer.html' ) ;
 
 				 </div>
 				 <div class="form-group">
-					<input type="password" name="pass1" class="form-control" placeholder="Create New Password" value="" required>
+					<input type="password" name="pass" class="form-control" placeholder="Create New Password" value="" required>
 				 </div>
 				 <div class="form-group">
-					<input type="password" name="pass2" class="form-control" placeholder="Confirm Password" value="" required>
+					<input type="password" name="pass1" class="form-control" placeholder="Confirm Password" value="" required>
 				 </div>
 
 
