@@ -1,4 +1,3 @@
-
 <?php
 # Access session.
 session_start() ;
@@ -17,20 +16,6 @@ $_SESSION['id'] = $id;
 require ( 'connect1.php' ) ;
 
 include ( 'admin.html' ) ;
-
-
-
-/*
-$email = $_SESSION[ 'email' ];
-//echo $email;
-
-$query = "SELECT * FROM customers WHERE email = '$email'" ;
-$request = mysqli_query( $link, $query ) ;
-
-if ( mysqli_num_rows( $request ) > 0 )
-	{
-
-*/
 
 
 
@@ -59,7 +44,7 @@ $media = $row['media_title']   ;
        <div class="card bg-light mb-3">
          <div class="card-header">Edit Media ' . $_GET['id'] . ' </div>
            <div class="card-body">
-           <form action="updateMedia.php" class="was-validated" method="post">
+           <form action="updateTV.php" class="was-validated" method="post">
                
                 
                 <div class="form-group">
@@ -81,9 +66,30 @@ $media = $row['media_title']   ;
                     
                 </div>
 
+                
+                <div class="form-group">
+                <small id="emailHelp" class="form-text text-muted">Release Year</small>
+                <input type="text" name="release_year" class="form-control" value=' . $row['release_year'] . '  required>
+                    
+                </div>
+
+                
+                <div class="form-group">
+                <small id="emailHelp" class="form-text text-muted">Language</small>
+                <input type="text" name="language" class="form-control" value=' . $row['language'] . '  >
+                    
+                </div>
+
+                
+                <div class="form-group">
+                <small id="emailHelp" class="form-text text-muted">Duration</small>
+                <input type="text" name="duration" class="form-control" value=' . $row['duration'] . '  required>
+                    
+                </div>
+
         <div class="form-group">
         <small id="emailHelp" class="form-text text-muted">Image Location</small>
-                   <input type="text" name="img" class="form-control" placeholder="Birthdate" value=' . $row['img'] . '  required>
+                   <input type="text" name="img" class="form-control" placeholder="img" value=' . $row['img'] . '  required>
                 </div>
 
         <div class="form-group">
@@ -92,12 +98,22 @@ $media = $row['media_title']   ;
                 </div>
                 
                 <div class="input-group mb-3">
-  <label class="input-group-text" for="inputGroupSelect01">Status</label>
+  <label class="input-group-text" for="inputGroupSelect01">Media Type</label>
   <select class="form-select" id="inputGroupSelect01" name="type">
     <option value="TV Show">TV Show</option>
     <option value="Movie">Movie</option>
   </select>
 </div>
+
+<div class="form-group">
+        <small id="emailHelp" class="form-text text-muted">Number of Seasons</small>
+                   <input type="text" name="num_seasons" class="form-control" placeholder="url" value=' . $row['num_seasons'] . '  required>
+                </div>
+
+                <div class="form-group">
+        <small id="emailHelp" class="form-text text-muted">Number of Episodes</small>
+                   <input type="text" name="num_episodes" class="form-control" placeholder="url" value=' . $row['num_episodes'] . '  required>
+                </div>
                 
         <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Submit"></p>
         <a href="deleteMedia.php?id='.$row['media_id'].'" class="btn btn-secondary btn-block" role="button" style="background-color:red;">
@@ -124,28 +140,7 @@ $media = $row['media_title']   ;
  //mysqli_close( $link );
   } 
   
-/*}
 
-
-	else{
-
-		echo '
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-		<div class="card bg-light mb-3">
-		  <div class="card-header">Go Premium</div>
-		  <div class="card-body">
-			<h5 class="card-title">Sorry, for Premium Subscribers only! Click below to get access now</h5>
-			<p class="card-text">Go premium today to access all media available on Webflix!</p>
-			<a href="chooseSubscription.php" class="btn btn-secondary btn-lg btn-block">Go Premium</a>
-		  </div>
-		</div>
-	</div>';
-	}
-
-*/
 
 
 
