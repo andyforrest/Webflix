@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <div class="container">
-<h1 class="text-center">What's On</h1>
+<h1 class="text-center" id ="landing" value="What's On">What's On</h1>
 <div class="row">
     <!-- Hotjar Tracking Code for My site -->
 <script>

@@ -150,7 +150,7 @@ include ( 'footer.html' ) ;
 		<div class="card bg-light mb-3">
 		  <div class="card-header">Create Account</div>
 			<div class="card-body">
-			<form action="register.php" class="was-validated" method="post">
+			<form action="register.php" class="was-validated" method="post" id="reg_form">
 				<div class="input-group">
 					<div class="input-group-prepend">
 					<span class="input-group-text">First and last name</span>

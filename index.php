@@ -50,12 +50,12 @@ echo '
       </div>
       <div class="modal-body">
        
-		<form action="login_action.php" class="was-validated" method="post"method="post">
+		<form action="login_action.php" class="was-validated" method="post"method="post" id="my_form">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Email" name="email" required>
+				<input type="text" class="form-control" placeholder="Email" name="email" required id ="email">
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" placeholder="Password" name="pass" required>
+				<input type="password" class="form-control" placeholder="Password" name="pass" required id ="pass">
 			</div>
 				
 
