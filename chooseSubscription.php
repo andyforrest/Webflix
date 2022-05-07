@@ -54,7 +54,7 @@ if ( empty( $errors ) )
             <form action="home.php" method="POST">
               <input type="hidden" id="basicPrice" name="priceId">
               <img
-                src="/img/starter.png"
+                src="img/rocket.gif"
                 width="120"
                 height="120"
                 />
@@ -68,7 +68,7 @@ if ( empty( $errors ) )
             <form action="/webflix/paypage" method="POST">
               <input type="hidden" id="proPrice" name="priceId">
               <img
-                src="/img/professional.png"
+                src="img/video.gif"
                 width="120"
                 height="120"
                 />
