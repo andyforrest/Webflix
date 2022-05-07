@@ -27,7 +27,7 @@ include ( 'logout.html' ) ;
 
 
 # Retrieve movies from media
-$q = "SELECT * FROM media WHERE type = 'Movie'" ;
+$q = "SELECT * FROM media WHERE type = 'TV Show'" ;
 $r = mysqli_query( $link, $q ) ;
 
 	
@@ -59,7 +59,7 @@ $r = mysqli_query( $link, $q ) ;
 	}
         
         # Or display message.
-	else { echo '<p>There are currently no movies available.</p>
+	else { echo '<p>There are currently no TV Shows available.</p>
 	' ; }
 	
         
