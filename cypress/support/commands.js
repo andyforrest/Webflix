@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', () => {
+    cy.visit('localhost:8888/webflix/index.php')
+        cy.get(':nth-child(2) > .card > .card-body > .btn').click()
+        cy.get('#email').invoke('val', 'exampleEmail@cypress.com')
+            .should('have.value', 'exampleEmail@cypress.com')
+           cy.get('#pass').invoke('val','1')
+           cy.get('.modal-footer > .btn').click()
+           cy.get('#landing')
+           .should('have.text', "What's On")
+})
+
+Cypress.Commands.add('getByTestId', (testid) => {
+    return cy.get(`[data-testid=${testId}]`)
+  });

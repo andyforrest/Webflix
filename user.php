@@ -77,13 +77,7 @@ include ( 'footer.html' ) ;
       </div>
 <div class="modal-body">
    <form action="change-password.php" method="post">
-      <div class="form-group">
-       <input type="email"  name="email" 
-                 class="form-control"  
-                 placeholder="Confirm Email" 				
-                value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" 
-   required>
-     </div>
+      
 <div class="form-group">
     <input type="password"
                 name="pass1" 

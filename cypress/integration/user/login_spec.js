@@ -4,7 +4,7 @@ describe('login', () => {
     beforeEach(() => {
         cy.visit('localhost:8888/webflix/index.php')
         cy.get(':nth-child(2) > .card > .card-body > .btn').click()
-        cy.get('.modal-footer > .btn').click()
+        //cy.get('.modal-footer > .btn').click()
     })
 
     it('requires email', () => {

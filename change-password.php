@@ -12,10 +12,10 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 # Initialize an error array.
   $errors = array();
 # Check for an email address:
-  if ( empty( $_POST[ 'email' ] ) )
-  { $errors[] = 'Enter your email address.'; }
-  else
-  { $e = mysqli_real_escape_string( $link, trim( $_POST[ 'email' ] ) ) ; }
+  //if ( empty( $_POST[ 'email' ] ) )
+  //{ $errors[] = 'Enter your email address.'; }
+ //else
+  //{ $e = mysqli_real_escape_string( $link, trim( $_POST[ 'email' ] ) ) ; }
 # Check for a password and matching input passwords.
   if ( !empty($_POST[ 'pass1' ] ) )
   {
@@ -34,7 +34,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 # On success new password into 'users' database table.
   if ( empty( $errors ) ) 
   {
-    $q = "UPDATE users SET pass= SHA2('$p',256) WHERE email='$e'";
+    $q = "UPDATE users SET pass= SHA2('$p',256) WHERE user_id={$_SESSION[ 'user_id' ]}";
     $r = @mysqli_query ( $link, $q ) ;
     if ($r)
     {
