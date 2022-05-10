@@ -20,7 +20,7 @@ include ( 'logout.html' ) ;
 require ( 'connect1.php' ) ;
 
 # Retrieve items from 'bookings' database table.
-$q = "SELECT * FROM mov_rev WHERE id={$_SESSION['user_id']}
+$q = "SELECT * FROM mov_rev WHERE user_id={$_SESSION['user_id']}
 ORDER BY post_date DESC" ;
 
 $r = mysqli_query( $link, $q ) ;

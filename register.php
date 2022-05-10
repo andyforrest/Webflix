@@ -114,7 +114,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 
  if(empty($errors)){
     
-     $sql = "INSERT INTO users (first_name, last_name, email, birthdate, number, country, pass, security_q, security_a, reg_date, status) VALUES ('$fn', '$ln', '$e', '$birthdate', '$num', '$country', SHA2('$p',256), SHA2('$sq',256), SHA2('$sa',256), NOW(), 'active')";
+     $sql = "INSERT INTO users (first_name, last_name, email, birthdate, number, country, pass, security_q, security_a, reg_date, status) VALUES ('$fn', '$ln', '$e', '$birthdate', '$num', '$country', SHA2('$p',256), '$sq', SHA2('$sa',256), NOW(), 'active')";
      if(mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful
