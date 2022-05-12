@@ -8,7 +8,7 @@
 <h1 class="text-center">Reset Password</h1>
 
 <?php 
-
+session_start();
 
 
 include('login.html');
@@ -19,29 +19,18 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
   # Open database connection.
   require ( 'connect1.php' ) ;
 
-  # Get connection, load, and validate functions.
-  require ( 'admin_forgotPassword_tools.php' ) ;
-
-  # Check login.
-  list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'security_a' ] ) ;
-
-  # On success set session data and display logged in page.
-  if ( $check )  
-  {
-    # Access session.
-    session_start();
-    $_SESSION[ 'admin_id' ] = $data[ 'admin_id' ] ;
-    $_SESSION[ 'first_name' ] = $data[ 'first_name' ] ;
-    $_SESSION[ 'last_name' ] = $data[ 'last_name' ] ;
-    load ( 'adminUser.php' ) ;
-  }
-  # Or on failure set errors.
-  else { $errors = $data; } 
-
-  # Close database connection.
-  mysqli_close( $link ) ; 
+  # Retrieve selective item data from 'movie' database table. 
+$q = "SELECT * FROM admins WHERE email= '{$_POST[ 'email' ]}'" ;
+$r = mysqli_query( $link, $q ) ;
+if ( mysqli_num_rows( $r ) == 1 )
+{
+	$row = mysqli_fetch_array( $r, MYSQLI_ASSOC );
+	$_SESSION[ 'security_q' ] = $row['security_q'] ;
+	$_SESSION[ 'email' ] = $row['email'] ;
+	header('Location: admin_securityQ.php');
 }
 
+}
 
 
 ?>
@@ -69,12 +58,8 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 					<input type="email" name="email" class="form-control" placeholder="Email" value="" required>
 
 					</div>
-				<div class="form-group">
-							<input type="text" name="security_q" class="form-control" placeholder="Your Security Question" value="" required>
-						</div>
-						<div class="form-group">
-							<input type="text" name="security_a" class="form-control" placeholder="Security Question Answer" value="" required>
-						</div>
+				
+						
 				<input type="submit" class="btn btn-secondary btn-lg btn-block" value="Submit"></p>
 				</div>
 				</div>

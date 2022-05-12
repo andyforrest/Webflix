@@ -96,7 +96,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 
  if(empty($errors)){
     
-     $sql = "INSERT INTO admins (first_name, last_name, email, pass, security_q, security_a, reg_date) VALUES ('$fn', '$ln', '$e', SHA2('$p',256), SHA2('$sq',256), SHA2('$sa',256), NOW() )";
+     $sql = "INSERT INTO admins (first_name, last_name, email, pass, security_q, security_a, reg_date) VALUES ('$fn', '$ln', '$e', SHA2('$p',256), '$sq', SHA2('$sa',256), NOW() )";
      if(mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful

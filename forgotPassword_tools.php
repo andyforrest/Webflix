@@ -9,7 +9,7 @@
 # Function to load specified or default URL.
 
 
-function load( $page = 'forgotPassword.php' )
+function load( $page = 'securityQ.php' )
 {
   # Begin URL with protocol, domain, and current directory.
   $url = 'http://' . $_SERVER[ 'HTTP_HOST' ] . dirname( $_SERVER[ 'PHP_SELF' ] ) ;
@@ -40,7 +40,7 @@ function validate( $link, $email = '', $sa = '')
  # On success retrieve user_id, first_name, and last name from 'users' database.
   if ( empty( $errors ) ) 
   {
-    $q = "SELECT user_id, first_name, last_name FROM users WHERE email='$e' AND security_a=SHA2('$sa',256)" ;
+    $q = "SELECT user_id, first_name, last_name FROM users WHERE email='$e' AND security_a='$sa'" ;
     
     $r = mysqli_query ( $link, $q ) ;
     if ( @mysqli_num_rows( $r ) == 1 ) 

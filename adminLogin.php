@@ -17,7 +17,7 @@ if ( isset( $errors ) && !empty( $errors ) )
 {
  echo '<p id="err_msg">Oops! There was a problem:<br>' ;
  foreach ( $errors as $msg ) { echo " - $msg<br>" ; }
- echo 'Please try again or <a href="register.php">Register</a></p>' ;
+ echo 'Please try again or <a href="adminRegister.php">Register</a></p>' ;
 }
 //echo $_SERVER['HTTP_HOST'];
 //echo dirname( $_SERVER[ 'PHP_SELF' ] );
