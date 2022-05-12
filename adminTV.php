@@ -60,8 +60,8 @@ echo '<div class="container">';
 
 
   }
-  echo '  <a href="addMedia.php" class="btn btn-secondary btn-block" role="button">
-  Add Media</a>' ;
+  echo '  <a href="addTV.php" class="btn btn-secondary btn-block" role="button">
+  Add TV Show</a>' ;
   } 
 else { 
 echo '<div class="container">

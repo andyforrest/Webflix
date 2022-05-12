@@ -55,6 +55,18 @@ echo '<div class="container">
 				  
 			   </div>
 		  </div>
+	   </div>
+
+
+	   <div class="col-md-3 d-flex justify-content-center">
+		 <div class="card" style="width: 18rem;">
+			  <div class="card text-center">
+				
+				  <img src=img/obi.jpg alt="Movie" class="img-thumbnail bg-secondary">
+				  <h5 class="card-title">Obi-Wan Kenobi</h5>
+				  
+			   </div>
+		  </div>
 	   </div>';
 
 include ( 'footer.html' ) ;

@@ -73,7 +73,7 @@ if ( empty( $errors ) )
                 height="120"
                 />
               <div class="name">Professional</div>
-              <div class="price">£95.00</div>
+              <div class="price">£99.99</div>
               <div class="duration">per year</div>
               <button id="pro-plan-btn">Select</button>
             </form>

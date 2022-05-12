@@ -23,7 +23,7 @@ $sql = "DELETE FROM media WHERE media_id = '$id'";
      if($request = mysqli_query($link, $sql)){
 
       #Direct to choose subscription if registration successful
-       header('Location: viewMedia.php'); 
+       header('Location: adminTV.php'); 
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }

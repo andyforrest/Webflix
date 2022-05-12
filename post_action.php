@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST')
     # Open database connection.
     require ( 'connect1.php' ) ;
 # Execute inserting into 'review' database table.
-$q = "INSERT INTO mov_rev(id,first_name,last_name,movie_title,rate, message, post_date) 
+$q = "INSERT INTO mov_rev(user_id,first_name,last_name,movie_title,rate, message, post_date) 
 VALUES('{$_SESSION['user_id']}',
 '{$_SESSION['first_name']}',
 '{$_SESSION['last_name']}',

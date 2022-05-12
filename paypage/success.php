@@ -23,7 +23,7 @@
     <h2>Thank you for purchasing a <?php echo $product; ?>!</h2>
     <hr>
     <p>Your transaction ID is <?php echo $tid; ?></p>
-    <p>Check your email for more info</p>
+
     <p><a href="../home.php" class="btn btn-light mt-2">Goto Homepage</a></p>
   </div>
 </body>
