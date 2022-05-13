@@ -37,3 +37,14 @@ Cypress.Commands.add('login', () => {
 Cypress.Commands.add('getByTestId', (testid) => {
     return cy.get(`[data-testid=${testId}]`)
   });
+
+  Cypress.Commands.add('adminLogin', () => {
+    cy.visit('localhost:8888/webflix/adminIndex.php')
+    cy.get(':nth-child(2) > .card > .card-body > .btn').click()
+    cy.get(':nth-child(1) > .form-control').invoke('val', 'exampleEmail@cypress.com')
+        .should('have.value', 'exampleEmail@cypress.com')
+        cy.get(':nth-child(2) > .form-control').invoke('val','1')
+       cy.get('.modal-footer > .btn').click()
+       cy.get('.text-center')
+       .should('have.text', "Admin Homepage")
+}) 

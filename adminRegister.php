@@ -98,6 +98,17 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     
      $sql = "INSERT INTO admins (first_name, last_name, email, pass, security_q, security_a, reg_date) VALUES ('$fn', '$ln', '$e', SHA2('$p',256), '$sq', SHA2('$sa',256), NOW() )";
      if(mysqli_query($link, $sql)){
+      $q = "SELECT admin_id FROM admins WHERE email='$e'" ;
+      $r = @mysqli_query ( $link, $q ) ;
+      if ( mysqli_num_rows( $r ) != 0 ){
+    
+        while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
+      {
+         $_SESSION[ 'admin_id' ] = $row['admin_id'];
+    echo $_SESSION[ 'user_id' ];
+         
+        
+      }} ;
 
       #Direct to choose subscription if registration successful
        header('Location: adminHome.php'); 
@@ -122,7 +133,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     mysqli_close( $link );
   }  
 }
-include('admin_login_action.php');
+
 include ( 'footer.html' ) ;
 ?>
 
@@ -132,7 +143,7 @@ include ( 'footer.html' ) ;
 		<div class="card bg-light mb-3">
 		  <div class="card-header">Create Account</div>
 			<div class="card-body">
-			<form action="adminRegister.php" class="was-validated" method="post">
+			<form action="adminRegister.php" class="was-validated" method="post" id="reg_form">
 				<div class="input-group">
 					<div class="input-group-prepend">
 					<span class="input-group-text">First and last name</span>

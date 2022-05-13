@@ -33,7 +33,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     
   }}
   else{
-      echo 'Details not found. Please try again';
+      echo '<p>Details not found. Please try again</p>';
   } 
 
   # Close database connection.
@@ -54,7 +54,7 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 		<div class="card bg-light mb-3">
 		  <div class="card-header">Reset Password</div>
 			<div class="card-body">
-			<form action="securityQ.php" class="was-validated" method="post">
+			<form action="securityQ.php" class="was-validated" method="post" id="forgot_form">
 				<div class="input-group">
 
 				<p>Forgot your password? Enter in the details below to set a new password for your account.</p>
@@ -65,12 +65,12 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 				 <br>
 				 <div class="form-group">
                  <small id="emailHelp" class="form-text text-muted">Email</small>
-					<input type="email" name="email" class="form-control" placeholder="Email" value= "<?php echo $e; ?>"required readonly>
+					<input type="email" name="email" class="form-control" placeholder="Email" value= "<?php echo $e; ?>" required readonly>
 
 					</div>
 				<div class="form-group">
                 <small id="emailHelp" class="form-text text-muted">Your Security Question</small>
-							<input type="text" name="security_q" class="form-control" placeholder="Your Security Question" value="<?php echo $q; ?>"required readonly>
+							<input type="text" name="security_q" class="form-control" placeholder="Your Security Question" value="<?php echo $q; ?>" required readonly>
 						</div>
 						<div class="form-group">
                             

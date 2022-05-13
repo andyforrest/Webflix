@@ -249,8 +249,8 @@ $media = $row['media_title']   ;
   </select>
 </div>
                 
-        <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Submit"></p>
-        <a href="deleteMovie.php?id='.$row['media_id'].'" class="btn btn-secondary btn-block" role="button" style="background-color:red;">
+        <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Submit" id = "submit"></p>
+        <a href="deleteMovie.php?id='.$row['media_id'].'" class="btn btn-secondary btn-block" role="button" style="background-color:red;" id ="delete">
     Delete Media</a>
          </div>
        </div>
