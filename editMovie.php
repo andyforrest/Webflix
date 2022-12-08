@@ -246,6 +246,7 @@ $media = $row['media_title']   ;
   <label class="input-group-text" for="inputGroupSelect01">Media Type</label>
   <select class="form-select" id="inputGroupSelect01" name="type">
     <option value="Movie">Movie</option>
+    <option value="TV Show">TV Show</option>
   </select>
 </div>
                 
