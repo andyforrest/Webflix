@@ -2,3 +2,6 @@ connect1.php
 PhpProject1
 *connect
 db.php
+
+# dependencies
+/node_modules
